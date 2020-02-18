@@ -157,16 +157,20 @@ __meta__ = {
 script = ExtResource( 5 )
 
 [node name="Timer" type="Timer" parent="Meteorites"]
+autostart = true
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource( 6 )
 
 [node name="Timer" type="Timer" parent="Enemies"]
+autostart = true
 
 [node name="Bullets" type="Node2D" parent="."]
 script = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="Bullets"]
+[connection signal="health_changed" from="Spaceship" to="HUD" method="_on_Spaceship_health_changed"]
+[connection signal="score_changed" from="Spaceship" to="HUD" method="_on_Spaceship_score_changed"]
 [connection signal="timeout" from="Meteorites/Timer" to="Meteorites" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemies/Timer" to="Enemies" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Bullets/Timer" to="Bullets" method="_on_Timer_timeout"]

@@ -5,6 +5,7 @@
 
 [node name="Meteor" type="RigidBody2D"]
 position = Vector2( -283.55, -11.3137 )
+collision_layer = 4
 gravity_scale = 0.0
 script = ExtResource( 2 )
 __meta__ = {
